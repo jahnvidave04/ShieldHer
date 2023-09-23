@@ -19,7 +19,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     //USER INPUT
-                    SizedBox(height: 50),
+                    SizedBox(height: 30),
                     Text(
                       'SignUp to ShieldHer!',
                       style: TextStyle(
@@ -27,7 +27,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         fontSize: 28,
                       ),
                     ),
-                    SizedBox(height: 180),
+                    SizedBox(height: 100),
                     Text(
                       'username',
                       style: TextStyle(
@@ -72,6 +72,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           hintText: 'Enter last name',
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      'email',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 350,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: 'Enter email',
                         ),
                       ),
                     ),
@@ -140,42 +156,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
             ),
           ),
-
-          //NAV BAR
-          bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Color.fromARGB(255, 203, 133, 137),
-            selectedItemColor: Color.fromARGB(255, 87, 61, 43),
-            items: [
-              BottomNavigationBarItem(
-                icon: Tooltip(
-                  message: 'Login',
-                  child: Padding(
-                    padding:
-                        EdgeInsets.all(8.0), // Adjust the padding as needed
-                    child: Icon(
-                      Icons.person,
-                      color: Color.fromARGB(255, 87, 61, 43),
-                    ),
-                  ),
-                ),
-                label: 'Login',
-              ),
-              BottomNavigationBarItem(
-                icon: Tooltip(
-                  message: 'Sign up',
-                  child: Padding(
-                    padding:
-                        EdgeInsets.all(8.0), // Adjust the padding as needed
-                    child: Icon(
-                      Icons.add_circle_outline,
-                      color: Color.fromARGB(255, 87, 61, 43),
-                    ),
-                  ),
-                ),
-                label: 'Sign up',
-              ),
-            ],
-          )),
+      )
     );
   }
 }

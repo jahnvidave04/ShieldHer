@@ -15,8 +15,6 @@ class MainApp extends StatelessWidget {
        debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.amber,
-        primaryColor: Colors.amberAccent,
       ),
       home: HomePage(), // Set LoginScreen as the home
     );

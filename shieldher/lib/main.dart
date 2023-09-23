@@ -13,10 +13,10 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
        debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-        primaryColor: Colors.amberAccent,
-      ),
+      // theme: ThemeData(
+      //   primarySwatch: Colors.amber,
+      //   primaryColor: Colors.amberAccent,
+      // ),
       home: LoginScreen(), // Set LoginScreen as the home
     );
   }

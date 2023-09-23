@@ -51,6 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 28,
+                    color: Color.fromARGB(255, 87, 61, 43),
                   ),
                 ),
                 SizedBox(height: 180),
@@ -58,6 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   'username',
                   style: TextStyle(
                     fontSize: 20,
+                    color: Color.fromARGB(255, 87, 61, 43),
                   ),
                 ),
                 SizedBox(
@@ -74,6 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   'password',
                   style: TextStyle(
                     fontSize: 20,
+                    color: Color.fromARGB(255, 87, 61, 43),
                   ),
                 ),
                 SizedBox(

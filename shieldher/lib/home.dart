@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shieldher/phonecall.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -57,7 +58,12 @@ class HomeTab extends StatelessWidget {
             padding: EdgeInsets.all(15),
             minimumSize: Size(180, 180),
           ),
-          onPressed: () {
+          onPressed: () async {
+             Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => PhoneCall(),
+              ),
+            );
           },
           child: Icon(Icons.call),
         ),

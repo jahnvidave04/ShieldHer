@@ -9,7 +9,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         backgroundColor: Color.fromARGB(255, 232, 217, 193),
         body: SafeArea(
@@ -30,7 +30,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   SizedBox(height: 80),
                   Text(
-                    'username',
+                    'Username',
                     style: TextStyle(
                       fontSize: 20,
                       color: Color.fromARGB(255, 87, 61, 43),
@@ -47,7 +47,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'first name',
+                    'First Name',
                     style: TextStyle(
                       fontSize: 20,
                       color: Color.fromARGB(255, 87, 61, 43),
@@ -64,7 +64,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'last name',
+                    'Last Name',
                     style: TextStyle(
                       fontSize: 20,
                       color: Color.fromARGB(255, 87, 61, 43),
@@ -81,7 +81,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'email',
+                    'Email',
                     style: TextStyle(
                       fontSize: 20,
                       color: Color.fromARGB(255, 87, 61, 43),
@@ -98,7 +98,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'password',
+                    'Password',
                     style: TextStyle(
                       fontSize: 20,
                       color: Color.fromARGB(255, 87, 61, 43),
@@ -115,7 +115,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'phone number',
+                    'Phone Number',
                     style: TextStyle(
                       fontSize: 20,
                       color: Color.fromARGB(255, 87, 61, 43),
@@ -146,6 +146,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     onPressed: () async {
                       print("going to validate login info");
+                      //go to home after signup if authenticated
+                      //pop up box disclaimer for phone call page --> how to exit
                     },
                     child: Text(
                       'SIGN UP',

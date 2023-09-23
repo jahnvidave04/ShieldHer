@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shieldher/screens/signup.dart';
+import 'package:shieldher/home.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         body: TabBarView(
           children: [
@@ -56,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 180),
                 Text(
-                  'username',
+                  'Username',
                   style: TextStyle(
                     fontSize: 20,
                     color: Color.fromARGB(255, 87, 61, 43),
@@ -73,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'password',
+                  'Password',
                   style: TextStyle(
                     fontSize: 20,
                     color: Color.fromARGB(255, 87, 61, 43),
@@ -93,7 +94,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size.fromWidth(180),
-                    backgroundColor: Color.fromARGB(255, 221, 232, 185),
+                    // backgroundColor: Color.fromARGB(255, 221, 232, 185),
+                    // backgroundColor: Color.fromARGB(255, 203, 133, 137),
                     padding: EdgeInsets.symmetric(
                       vertical: 20,
                       horizontal: 60,
@@ -103,7 +105,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   onPressed: () async {
-                    print("going to validate login info");
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(),
+                      ),
+                    ); 
                   },
                   child: Text(
                     'LOGIN',
@@ -113,6 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  
                 ),
               ],
             ),

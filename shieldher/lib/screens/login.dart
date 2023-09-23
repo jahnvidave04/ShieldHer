@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shieldher/screens/signup.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -93,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
         ),
-
+        
         //NAV BAR
         bottomNavigationBar: BottomNavigationBar(
             backgroundColor: Color.fromARGB(255, 203, 133, 137),

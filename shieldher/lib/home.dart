@@ -21,22 +21,19 @@ class HomePage extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: const TabBar(
-            tabs: [
-              Tab(
-                icon: Icon(Icons.home),
-                
-              ),
-              Tab(
-                icon: Icon(Icons.list),
-              ),
-              Tab(
-                icon: Icon(Icons.settings),
-              ),
-            ],
-            indicatorColor:  Color.fromARGB(255, 87, 61, 43),
-
-            unselectedLabelColor: Color.fromARGB(255, 232, 217, 193),
-            
+          tabs: [
+            Tab(
+              icon: Icon(Icons.home),
+            ),
+            Tab(
+              icon: Icon(Icons.list),
+            ),
+            Tab(
+              icon: Icon(Icons.settings),
+            ),
+          ],
+          indicatorColor: Color.fromARGB(255, 87, 61, 43),
+          unselectedLabelColor: Color.fromARGB(255, 232, 217, 193),
         ),
         backgroundColor: Color.fromARGB(255, 203, 133, 137),
       ),
@@ -48,21 +45,26 @@ class HomePage extends StatelessWidget {
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 20,
-      height: 5.0,
-      color: const Color.fromARGB(255, 203, 133, 137),
-      child: ElevatedButton(
-        onPressed: () {},
-        child: Icon(Icons.call),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('HOME'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.all(15),
+            minimumSize: Size(180, 180),
+          ),
+          onPressed: () {
+          },
+          child: Icon(Icons.call),
+        ),
       ),
     );
   }
 }
-
 
 // ---------contact list--------
 class EmergencyContacts extends StatelessWidget {
@@ -81,28 +83,28 @@ class EmergencyContacts extends StatelessWidget {
   }
 }
 
-class ProfileCard extends StatelessWidget { 
-  @override 
-  Widget build(BuildContext context) { 
-    return Card ( 
+class ProfileCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
       color: Color.fromARGB(255, 232, 217, 193),
       child: ListView(
-        children: [
-          Divider (color: Color.fromARGB(255, 87, 61, 43), thickness: 0.5),
-          ListTile ( 
-            leading: CircleAvatar ( 
-              radius: 20.0, 
-              backgroundColor: Color(0xFF573D2B), 
-            ), 
+        children: const [
+          Divider(color: Color.fromARGB(255, 87, 61, 43), thickness: 0.5),
+          ListTile(
+            leading: CircleAvatar(
+              radius: 20.0,
+              backgroundColor: Color(0xFF573D2B),
+            ),
             title: Text("John Doe"),
-            subtitle: Text("Friend"), 
-            trailing: Icon (
-              Icons.person, 
+            subtitle: Text("Friend"),
+            trailing: Icon(
+              Icons.person,
               color: Colors.black,
               size: 20.0,
             ),
           ),
-          Divider (color: Color.fromARGB(255, 87, 61, 43), thickness: 0.5),
+          Divider(color: Color.fromARGB(255, 87, 61, 43), thickness: 0.5),
           ListTile(
             leading: CircleAvatar(
               radius: 20.0,
@@ -116,7 +118,7 @@ class ProfileCard extends StatelessWidget {
               size: 20.0,
             ),
           ),
-          Divider (color: Color.fromARGB(255, 87, 61, 43), thickness: 0.5),
+          Divider(color: Color.fromARGB(255, 87, 61, 43), thickness: 0.5),
           ListTile(
             leading: CircleAvatar(
               radius: 20.0,
@@ -130,7 +132,7 @@ class ProfileCard extends StatelessWidget {
               size: 20.0,
             ),
           ),
-          Divider (color: Color.fromARGB(255, 87, 61, 43), thickness: 0.5),
+          Divider(color: Color.fromARGB(255, 87, 61, 43), thickness: 0.5),
         ],
       ),
     );

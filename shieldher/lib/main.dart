@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shieldher/home.dart';
-import 'package:shieldher/screens/login.dart';
-import 'package:shieldher/screens/edit.dart';
 
 const isMac = false;
 
@@ -18,8 +16,8 @@ class MainApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
       ),
-      // home: HomePage(), // Set LoginScreen as the home
-      home: LoginScreen(),
+      home: HomePage(), // Set LoginScreen as the home
+      //home: LoginScreen(),
       // home: EditScreen(),
     );
   }

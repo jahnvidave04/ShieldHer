@@ -49,23 +49,54 @@ class HomeTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 232, 217, 193),
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 232, 217, 193),
         title: Text('HOME'),
       ),
       body: Center(
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.all(15),
-            minimumSize: Size(180, 180),
-          ),
-          onPressed: () async {
-             Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => PhoneCall(),
+        child: Column (
+          mainAxisAlignment: MainAxisAlignment.center, 
+          children: [
+            Padding (
+              padding: EdgeInsets.symmetric(horizontal:16),
+              child: Text (
+                "Walk with Cofidence, ShieldHer by Your Side",
+                textAlign: TextAlign.center,
+                style: TextStyle (
+                  fontSize: 20, 
+                  fontStyle: FontStyle.italic,
+                ),
               ),
-            );
-          },
-          child: Icon(Icons.call),
+            ),
+            Padding (
+              padding: EdgeInsets.only(top:20),
+              child: Image.asset(
+                'assets/map.png',
+                width: 350, 
+                height: 350,
+              ),
+            ),
+            SizedBox(height:10),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.all(15),
+                minimumSize: Size(180, 180),
+              ),
+              onPressed: () async {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => PhoneCall(),
+                  ),
+                );
+              },
+              child: Image.asset(
+                'assets/logo.png',
+                width: 150, 
+                height: 150,
+              ),
+            ),
+          ],
         ),
       ),
     );

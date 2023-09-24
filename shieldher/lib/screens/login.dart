@@ -29,13 +29,32 @@ class LoginScreenState extends State<LoginScreen> {
 
     if (response.statusCode == 200) {
       print('Login Successful');
+      print('Signup Successful');
+
       return true;
       // You can navigate to another screen or perform other actions here
     } else {
-      print('Error: ${response.reasonPhrase}');
-      // Handle login error, display a message to the user, etc.
-      return false;
+      print('${response.reasonPhrase}');
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Invalid UserName and Password'),
+            content: Text('Error: ${response.reasonPhrase}'),
+            actions: <Widget>[
+              TextButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
     }
+    // Handle login error, display a message to the user, etc.
+    return false;
   }
 
   @override
@@ -140,11 +159,34 @@ class LoginScreenState extends State<LoginScreen> {
                     // await loginUser();
                     bool loginSuccess = await loginUser();
                     if (loginSuccess) {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => HomePage(),
-                        ),
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Text('Success'),
+                            content: Text('Welcome to ShieldHer'),
+                            actions: <Widget>[
+                              TextButton(
+                                child: Text('OK'),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            HomePage()), // Replace with your login page widget
+                                  );
+                                },
+                              ),
+                            ],
+                          );
+                        },
                       );
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (context) => HomePage(),
+                      //   ),
+                      // );
                     } else {
                       print("Wrong ID Password");
                     }

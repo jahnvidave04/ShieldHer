@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shieldher/home.dart';
+import 'package:shieldher/screens/login.dart';
+import 'package:shieldher/screens/edit.dart';
 
 const isMac = false;
 

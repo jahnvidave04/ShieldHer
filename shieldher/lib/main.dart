@@ -18,8 +18,8 @@ class MainApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
       ),
-      // home: HomePage(), // Set LoginScreen as the home
-      home: LoginScreen(),
+      home: HomePage(), // Set LoginScreen as the home
+      //home: LoginScreen(),
       // home: EditScreen(),
     );
   }

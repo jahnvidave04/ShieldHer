@@ -9,6 +9,5 @@ how do run app
 
 Project is based in Maven 
 
-Cd Demo
-
-Run command : mvn spring-boot:run
+1)Cd Demo
+2)Run command : mvn spring-boot:run

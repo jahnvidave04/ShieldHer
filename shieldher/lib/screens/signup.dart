@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:shieldher/screens/login.dart';
+
 class SignUpScreen extends StatefulWidget {
   @override
   _SignUpScreenState createState() => _SignUpScreenState();
@@ -36,10 +38,48 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     if (response.statusCode == 200) {
       print('Signup Successful');
-      // You can show a success message here if needed
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Success'),
+            content: Text('Signup Successful'),
+            actions: <Widget>[
+              TextButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            LoginScreen()), // Replace with your login page widget
+                  );
+                },
+              ),
+            ],
+          );
+        },
+      );
     } else {
       print('Error: ${response.reasonPhrase}');
-      // You can show an error message here if needed
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Error'),
+            content: Text('Error: ${response.reasonPhrase}'),
+            actions: <Widget>[
+              TextButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
     }
   }
 
@@ -190,6 +230,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onPressed: () async {
                       await registerUser();
                       print("going to validate login info");
+
                       //go to home after signup if authenticated
                       //pop up box disclaimer for phone call page --> how to exit
                     },

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -6,6 +8,41 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+
+  Future<void> registerUser() async {
+    var url = Uri.parse(
+        'http://localhost:8080/register'); // Replace with your backend API URL
+
+    var response = await http.post(
+      url,
+      headers: {
+        'Content-Type': 'application/json', // Add this line
+      },
+      body: jsonEncode({
+        'userName': usernameController.text,
+        'firstName': firstNameController.text,
+        'lastName': lastNameController.text,
+        'email': emailController.text,
+        'password': passwordController.text,
+        'phone': phoneController.text,
+      }),
+    );
+
+    if (response.statusCode == 200) {
+      print('Signup Successful');
+      // You can show a success message here if needed
+    } else {
+      print('Error: ${response.reasonPhrase}');
+      // You can show an error message here if needed
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -39,6 +76,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     width: 350,
                     child: TextField(
+                      controller: usernameController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Enter a username',
@@ -56,6 +94,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     width: 350,
                     child: TextField(
+                      controller: firstNameController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Enter first name',
@@ -73,6 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     width: 350,
                     child: TextField(
+                      controller: lastNameController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Enter last name',
@@ -90,6 +130,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     width: 350,
                     child: TextField(
+                      controller: emailController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Enter email',
@@ -107,6 +148,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     width: 350,
                     child: TextField(
+                      controller: passwordController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Enter a password',
@@ -124,6 +166,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     width: 350,
                     child: TextField(
+                      controller: phoneController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Enter number',
@@ -145,6 +188,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     onPressed: () async {
+                      await registerUser();
                       print("going to validate login info");
                       //go to home after signup if authenticated
                       //pop up box disclaimer for phone call page --> how to exit

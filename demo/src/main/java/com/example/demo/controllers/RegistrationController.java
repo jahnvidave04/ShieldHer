@@ -38,14 +38,14 @@ public class RegistrationController {
 
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-    @GetMapping("/users/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable Long id) {
-        User user = userService.getUserById(id);
+    // @GetMapping("/users/{id}")
+    // public ResponseEntity<User> getUserById(@PathVariable Long id) {
+    //     User user = userService.getUserById(id);
 
-        if (user != null) {
-            return new ResponseEntity<>(user, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
+    //     if (user != null) {
+    //         return new ResponseEntity<>(user, HttpStatus.OK);
+    //     } else {
+    //         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    //     }
+    // }
 }
